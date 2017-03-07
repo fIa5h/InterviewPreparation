@@ -88,9 +88,88 @@ Output: c
 
 ## 3) Stacks and Queues
 
+### 3.1 - Three in One
+Describe how you could use a single array to implement three stacks.
+
+### 3.2 - Stack Min
+How would you design a stack which, in addition to push and pop, has a function which returns the minimum element? Push, pop and min should all operate in O(1) time.
+
+### 3.3 - Stack of Plates
+Imagine a literal stack of plates. If the stack gets too high, it might topple. Therefore, in real life, we would likely start a new stack when the previous stack exceeds som threshold. Implement a data structure SetOfStacks that mimics this. SetOfStacks should be composed of several stacks and should create a new stack once the previous one exceeds capacity. SetOfStacks.push() and SetOfStacks.pop() should behave indentically to a sinfle stack (that is, pop() should return the same calues as it would if there were just a single stack).
+
+FOLLOW UP:
+Implement a function popAt(int index) which performs a pop operation on a specific sub-stack.
+
+### 3.4 - Queue via Stacks
+Implement a MyQueue class which implements a queue using two stacks.
+
+### 3.5 - Sort Stack
+Write a program to sort a stack such that the smallest items are on the top. You can use an additional temporary stack, but you may not copy the elements into any other data structure (such as an array). The stack suports the following operations: push, pop, peek, and isEmpty.
+
+### 3.6 - Animal Shelter
+An animal shelter, which holds only dogs and cats, operates on a strictly "first in, first out" basis. People must adopt either the "oldest" (based on arrival time) of all the animals at the shelter, or they can select whether they would prefer a dog or a cat (and will receive the oldest animal of that type). They cannost select which specific animal they would like. Create the data astructures to maintain this system and implement operations such as enqueue, dewueueAny, dequeueDog, and dequeueCat. You may use the built-in LinkedLust data structure. 
+
 *****************************************************************************************************************************************************************************************************************************************************************************************************************************************
 
 ## 4) Trees and Graphs
+
+### 4.1 - Route between nodes
+Given a directed graph, design an algorithm to find out whether there is a route between two nodes.
+
+### 4.2 - Minimal Tree
+Given a sorted (increasing order) array with unique integer elements, write an algorithm to create a binary search tree with minimal height.
+
+### 4.3 - List of Depths
+Given a binary tree, design an algorithm which creates a linked list of all the nodes at each depth (e.g., if you have a tree with depth D, you'll have D linked lists)
+
+### 4.4 - Check Balanced
+Implement a function to check if a binary tree is balanced. For the purposes of this question, a balanced tree is defined to ba a stree such that the heights of the two subtrees of any node never differ by more than one. 
+
+
+### 4.5 - Validate BST
+Implement a function to check if a binary tree is a binary search tree.
+
+
+### 4.6 - Successor
+Write an algorithm to find the "next" node (i.e., in-order successor) of a given node in a binary search tree. You may assume that each node has a link to its parents. 
+
+
+### 4.7 - Build order
+You are given a list of projects and a list of dependencies (which is a list of pairs of projects, where the second project is dependent on the first project). All of a project's dependeies must be built before the project is. Find a build order that will allow the projects to be built. If there is no valid build order, return an error.
+
+EXAMPLE:
+
+Input:
+projects: a, b, c, d, e, f
+dependencies: (a,d), (f,b), (b,d), (f,a), (d,c)
+
+Output: 
+f, e, a, b, d, c
+
+
+### 4.8 - First Common Ancestor
+Design an algorithm and write code to find the first common ancestor of two nodes in a binary tree. Avoid storing additionall nodes in a data structure. NOTE: This is not necessarily a binary search tree.
+
+
+### 4.9 - BST sequences
+A binary search tree was created bu traversing through an array from left to right and inserting each element. Given a binary search tree with distinct elements, print all possible arrays that coule have led to this tree.
+
+EXAMPLE:
+   2
+  / \
+ 1   3
+ 
+Output:
+[2,1,3], [2.3.1]
+
+### 4.10 - 
+
+
+### 4.11 - 
+
+
+### 4.12 - 
+
 
 *****************************************************************************************************************************************************************************************************************************************************************************************************************************************
 
