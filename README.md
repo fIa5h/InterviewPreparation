@@ -36,37 +36,37 @@ Assume you have a method isSubstring which checks if one word is a substring of 
 ## 2) LINKED LISTS
 
 ### 2.1 - Remove Dups
-Write code to remove duplicates from an unsorted linked list.
-Follow up - How would you solve this problem if a temporary buffer is not allowed?
+Write code to remove duplicates from an unsorted linked list.    
+FOLLOW UP - How would you solve this problem if a temporary buffer is not allowed?
 
 ### 2.2 - Return Kth to the last
 Implement an algorithm to find the Kth to the last element of a singly linked list.
 
 ### 2.3 - Delete middle node
-Implement and algorithm to delete a node in the middle (i.e., any node but the first and last node, not necessarily the exact middle) of a singly linked list, given only access to the node.
+Implement and algorithm to delete a node in the middle (i.e., any node but the first and last node, not necessarily the exact middle) of a singly linked list, given only access to the node.    
 
-EXAMPLE:
-Input: the node c from the linked list a->b->c->d->e->f
-Result: nothing is returned but the new linked list looks like a->b->d->e->f
+EXAMPLE:    
+Input: the node c from the linked list a->b->c->d->e->f    
+Result: nothing is returned but the new linked list looks like a->b->d->e->f    
 
 ### 2.4 - Partition
 Write code to partition a linked list around a value X, such that all nodes less than X come before all nodes greater than or equal to X. If X is contained within the list, the values of X only need to be after the elements less than X (see below). The partition element X can appear anywhere in the “right partition”; it doesn’t need to appear between the left and right partitions.
 
-EXAMPLE:
-Input: 3 -> 5 -> 8 -> 5 -> 10 -> 2 -> 1 [partition = 5]
-Output: 3 -> 1 -> 2 -> 10 -> 5 -> 5 -> -> 8
+EXAMPLE:    
+Input: 3 -> 5 -> 8 -> 5 -> 10 -> 2 -> 1 [partition = 5]    
+Output: 3 -> 1 -> 2 -> 10 -> 5 -> 5 -> -> 8    
 
 ### 2.5 - Sum lists
 You have two numbers represented by a linked list, where each node contains a single digit. The digits are stored in reverse order, such that the 1’s digit is at the head of the list. Write a function that adds the two numbers and returns the sum as a linked list.
 
-EXAMPLE:
-Input: (7 -> 1 -> 6) + (5 -> 9 -> 2). That is, 617 +295.
-Output: 2 -> 1 -> 9. That is, 912.
+EXAMPLE:    
+Input: (7 -> 1 -> 6) + (5 -> 9 -> 2). That is, 617 +295.    
+Output: 2 -> 1 -> 9. That is, 912.    
 
-FOLLOW UP
-Suppose the digits are stored in a forward order. Repeat the above problem.
-Input: (6 -> 1 -> 7) + (2 -> 9 -> 5). That is, 617 +295.
-Output: 9 -> 1 -> 2. That is, 912.
+FOLLOW UP    
+Suppose the digits are stored in a forward order. Repeat the above problem.    
+Input: (6 -> 1 -> 7) + (2 -> 9 -> 5). That is, 617 +295.    
+Output: 9 -> 1 -> 2. That is, 912.    
 
 ### 2.6 - Palindrome
 Implement a function to check if a linked list is a palindrome.
@@ -77,12 +77,12 @@ Given two singly linked lists, determine if the two lists intersect. Return the 
 ### 2.8 - Loop Detection
 Given a circular linked list, implement an algorithm that returns the node at the beginning of the loop. 
 
-DEFINITION
-Circular linked list: A (corrupt) linked list in which a node’s next pointer points to an earlier node, so as to make a loop in the linked list
+DEFINITION    
+Circular linked list: A (corrupt) linked list in which a node’s next pointer points to an earlier node, so as to make a loop in the linked list    
 
-EXAMPLE
-Input: a -> b -> c -> d -> e -> c (the same c as earlier)
-Output: c
+EXAMPLE    
+Input: a -> b -> c -> d -> e -> c (the same c as earlier)    
+Output: c    
 
 *****************************************************************************************************************************************************************************************************************************************************************************************************************************************
 
@@ -95,10 +95,10 @@ Describe how you could use a single array to implement three stacks.
 How would you design a stack which, in addition to push and pop, has a function which returns the minimum element? Push, pop and min should all operate in O(1) time.
 
 ### 3.3 - Stack of Plates
-Imagine a literal stack of plates. If the stack gets too high, it might topple. Therefore, in real life, we would likely start a new stack when the previous stack exceeds som threshold. Implement a data structure SetOfStacks that mimics this. SetOfStacks should be composed of several stacks and should create a new stack once the previous one exceeds capacity. SetOfStacks.push() and SetOfStacks.pop() should behave indentically to a sinfle stack (that is, pop() should return the same calues as it would if there were just a single stack).
+Imagine a literal stack of plates. If the stack gets too high, it might topple. Therefore, in real life, we would likely start a new stack when the previous stack exceeds som threshold. Implement a data structure SetOfStacks that mimics this. SetOfStacks should be composed of several stacks and should create a new stack once the previous one exceeds capacity. SetOfStacks.push() and SetOfStacks.pop() should behave indentically to a sinfle stack (that is, pop() should return the same calues as it would if there were just a single stack).    
 
-FOLLOW UP:
-Implement a function popAt(int index) which performs a pop operation on a specific sub-stack.
+FOLLOW UP:    
+Implement a function popAt(int index) which performs a pop operation on a specific sub-stack.    
 
 ### 3.4 - Queue via Stacks
 Implement a MyQueue class which implements a queue using two stacks.
@@ -135,16 +135,16 @@ Write an algorithm to find the "next" node (i.e., in-order successor) of a given
 
 
 ### 4.7 - Build order
-You are given a list of projects and a list of dependencies (which is a list of pairs of projects, where the second project is dependent on the first project). All of a project's dependeies must be built before the project is. Find a build order that will allow the projects to be built. If there is no valid build order, return an error.
+You are given a list of projects and a list of dependencies (which is a list of pairs of projects, where the second project is dependent on the first project). All of a project's dependeies must be built before the project is. Find a build order that will allow the projects to be built. If there is no valid build order, return an error.    
 
-EXAMPLE:
+EXAMPLE:    
 
-Input:
-projects: a, b, c, d, e, f
-dependencies: (a,d), (f,b), (b,d), (f,a), (d,c)
+Input:    
+projects: a, b, c, d, e, f    
+dependencies: (a,d), (f,b), (b,d), (f,a), (d,c)    
 
-Output: 
-f, e, a, b, d, c
+Output:     
+f, e, a, b, d, c    
 
 
 ### 4.8 - First Common Ancestor
@@ -155,12 +155,12 @@ Design an algorithm and write code to find the first common ancestor of two node
 A binary search tree was created bu traversing through an array from left to right and inserting each element. Given a binary search tree with distinct elements, print all possible arrays that coule have led to this tree.
 
 EXAMPLE:    
-   2    
-  / \    
-1   3    
+ &nbsp; 2    
+  &nbsp;/ &nbsp; \    
+1   &nbsp;&nbsp; 3    
  
 Output:
-[2,1,3], [2.3.1]
+[2,1,3], [2,3,1]
 
 ### 4.10 - Check Subtree
 T1 and T2 are two very large binary trees, with T1 much bigger than T2. Create an algorithm to determine if T2 is a subtree of T1. A tree T2 is a subtree of T1 if there exists a node n in T1 such that the subtree of n is identical to T2. That is, if you cut off the tree at node n, the two trees wuold be identical.
@@ -201,10 +201,10 @@ Given a real number between 0 and 1 (e.g., 0.72) that is passed in as a double, 
 ### 5.3 - Flip Bit to Win
 You have an integer and you can flip exactly one bit from a 0 to a 1. Write code to find the length of the longest sequence of 1s you could create.
 
-EXAMPLE:
+EXAMPLE:    
 
-Input: 1175 (or: 11011101111)
-Output: 8
+Input: 1175 (or: 11011101111)    
+Output: 8    
 
 ### 5.4 - Next Number
 Given a positive integer, print the next smallest and the next largest number that have the same number of 1 bits in their binary representation.
@@ -215,9 +215,9 @@ Explain what the following code does: ((n & (n-1)) == 0)
 ### 5.6 - Conversion
 Write a function to determine the number of bits you would need to flip to convert integer A to integer B.
 
-EXAMPLE:
-Input: 29 (or: 11101), 15 (or: 01111)
-Output: 2
+EXAMPLE:    
+Input: 29 (or: 11101), 15 (or: 01111)    
+Output: 2    
 
 ### 5.7 - Pairwise Swap
 Write a program to swap odd and even bits in an integer with as few instructions as possible (e.g., bit 0 and bit 1 are swapped, bit 2 and bit 3 are swapped, and so on).
@@ -235,7 +235,7 @@ drawLine(byte[] screen, int width, int x1, int x2, int y)
 You have 20 bottles of pills, 19 bottles have 1.0 gram pills, but one has pills of weight 1.1 grams. Given a scale that provides an exact measurement, how would you find the heavy bottle? You can only use the scale once.
 
 ### 6.2 - Basketball
-You have a basketball hoop and someone says that you can play one of two games.    
+You have a basketball hoop and someone says that you can play one of two games.       
 Game 1: You get one shot to make the hoop.    
 Game 2: You get three shots and you have to make two of three shots.    
 If p is the probability of making a particular shot, for which values of p should you pick one game or the other?
