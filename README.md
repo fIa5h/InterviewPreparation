@@ -1,4 +1,5 @@
 # My Interview Preparation Studies
+* Please note that the majority of the questions contained in this document are directly from Cracking the Coding Interview by Gayle Laakmann McDowell. This document is intended for my personal use and study of Gayle's book. The book is amazing - I highly suggest you [purchase a copy](http://www.crackingthecodinginterview.com/).
 
 *****************************************************************************************************************************************************************************************************************************************************************************************************************************************
 
