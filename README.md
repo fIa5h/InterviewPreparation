@@ -154,26 +154,77 @@ Design an algorithm and write code to find the first common ancestor of two node
 ### 4.9 - BST sequences
 A binary search tree was created bu traversing through an array from left to right and inserting each element. Given a binary search tree with distinct elements, print all possible arrays that coule have led to this tree.
 
-EXAMPLE:
-   2
-  / \
- 1   3
+EXAMPLE:    
+   2    
+  / \    
+ 1   3    
  
 Output:
 [2,1,3], [2.3.1]
 
-### 4.10 - 
+### 4.10 - Check Subtree
+T1 and T2 are two very large binary trees, with T1 much bigger than T2. Create an algorithm to determine if T2 is a subtree of T1. A tree T2 is a subtree of T1 if there exists a node n in T1 such that the subtree of n is identical to T2. That is, if you cut off the tree at node n, the two trees wuold be identical.
 
 
-### 4.11 - 
+### 4.11 - Random Node
+You are implementing a binary tree class from scratch which, in addition to insert, find and delete, has a method getRandomeNode() which returns a randome node from the tree. All nodes should be equally likely to be chosen. Design and implement an algorithm to getRandomNode, and explain how you would implement the rest of the methods.
 
 
-### 4.12 - 
+### 4.12 - Paths with Sum
+You are given a binary tree in which each node contains an integer value (which might be positive or negative). Design an algorithm to count the number of paths that sum to a given value. The path does not need to start or end at the root or a leaf, but it must go downwards (traveling only from parent nodes to child nodes).
 
 
 *****************************************************************************************************************************************************************************************************************************************************************************************************************************************
 
 ## 5) Bit Manipulation
+
+Bitwise operators treat their operands as a sequence of 32 bits (zeroes and ones), rather than as decimal, hexadecimal, or octal numbers. For example, the decimal number nine has a binary representation of 1001. Bitwise operators perform their operations on such binary representations, but they return standard JavaScript numerical values.    
+
+The following table summarizes JavaScript's bitwise operators:    
+
+| Operator | Usage | Description |
+|------------------------------|---------|----------------------------------------------------------------------------------------------------------------------------------|
+| Bitwise AND | a & b | Returns a one in each bit position for which the corresponding bits of both operands are ones. |
+| Bitwise OR | a &#124; b | Returns a one in each bit position for which the corresponding bits of either or both operands are ones. |
+| Bitwise XOR | a ^ b | Returns a one in each bit position for which the corresponding bits of either but not both operands are ones. |
+| Bitwise NOT | ~ a | Inverts the bits of its operand. |
+| Left Shift | a << b | Shifts a in binary representation b (< 32) bits to the left, shifting in zeroes from the right. |
+| Sign-propogating right shift | a >> b | Shifts a in binary representation b (< 32) bits to the right, discarding bits shifted off. |
+| Zero-fill right shift | a >>> b | Shifts a in binary representation b (< 32) bits to the right, discarding bits shifted off, and shifting in zeroes from the left. |
+
+### 5.1 - Insertion
+You are given two 32-bit numbers, N and M, and two bit positions, i and j. Write a method to insert M into N such that M starts at bit j and ends at bit i. You can assume that the bits j through i have enough space to fit all of M. That is, if M=10011, you can assume that there are atleast 5 bits between j and i. You would not, for example, have j=3 and i=2, because M could not fully fit between bit 3 and bit 2.
+
+### 5.2 - Binary to string
+Given a real number between 0 and 1 (e.g., 0.72) that is passed in as a double, print the binary representation. If the number cannot be represented accurately in binary with at most 32 characters, print "ERROR"
+
+### 5.3 - Flip Bit to Win
+You have an integer and you can flip exactly one bit from a 0 to a 1. Write code to find the length of the longest sequence of 1s you could create.
+
+EXAMPLE:
+
+Input: 1175 (or: 11011101111)
+Output: 8
+
+### 5.4 - Next Number
+Given a positive integer, print the next smallest and the next largest number that have the same number of 1 bits in their binary representation.
+
+### 5.5 - Debugger
+Explain what the following code does: ((n & (n-1)) == 0)
+
+### 5.6 - Conversion
+Write a function to determine the number of bits you would need to flip to convert integer A to integer B.
+
+EXAMPLE:
+Input: 29 (or: 11101), 15 (or: 01111)
+Output: 2
+
+### 5.7 - Pairwise Swap
+Write a program to swap odd and even bits in an integer with as few instructions as possible (e.g., bit 0 and bit 1 are swapped, bit 2 and bit 3 are swapped, and so on).
+
+### 5.8 - Draw Line
+A monochrome screen is stored as a single array of bytes, allowing eight consecutive pixels to be stored in one byte. The screen has width w, where w is divisible by 8 (that is, no byte will be split accress rows). The height of the screen, of course, can be rerived from the length of the array and the width. Implement a function that draws a horizontal line from (x1, y) to (x2, y). The method signature should look something like this:    
+drawLine(byte[] screen, int width, int x1, int x2, int y)
 
 *****************************************************************************************************************************************************************************************************************************************************************************************************************************************
 
