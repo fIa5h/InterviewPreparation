@@ -14,13 +14,13 @@ Unicode is a superset of ASCII, and the numbers 0–128 have the same meaning in
 
 Because Unicode characters don't generally fit into one 8-bit byte, there are numerous ways of storing Unicode characters in byte sequences, such as UTF-32 and UTF-8.
 
-In theory, any character encoding can be used, but no system/browser understands all of them. The more widely a character encoding is used, the better the chance that a browser will understand it. [*List of character encoding references*](http://www.iana.org/assignments/character-sets/character-sets.xhtml)
+In theory, any character encoding can be used, but no system/browser understands all of them. The more widely a character encoding is used, the better the chance that a system/browser will understand it. [*List of character encoding references*](http://www.iana.org/assignments/character-sets/character-sets.xhtml)
 
 Understanding Why ASCII and Unicode were created in the first place helped me understand how they actually work.    
 
 ### ASCII, Origins    
 
-As stated in the other answers, ASCII uses 7 bits to represent a character. By using 7 bits, we can have a maximum of 2^7 (= 128) distinct combinations*. Which means that we can represent 128 characters maximum.    
+ASCII uses 7 bits to represent a character. By using 7 bits, we can have a maximum of 2^7 (= 128) distinct combinations. Which means that we can represent 128 characters maximum.    
 
 >
 Wait, 7 bits? But why not 1 byte (8 bits)?    
@@ -39,7 +39,7 @@ See below the binary representation of a few characters in ASCII:
 0001101 -> Carriage Return (13)
 ~~~~
 
-See the full ASCII table over here.
+I would highly recommend reviewing the [full ASCII table here](http://www.asciitable.com/).
 
 ASCII was meant for English only.
 
@@ -48,7 +48,8 @@ What? Why English only? So many languages out there!
 >
 
 Because the center of the computer industry was in the USA at that time. As a consequence, they didn't need to support accents or other marks such as á, ü, ç, ñ, etc. (aka diacritics).
-ASCII Extended
+
+### ASCII Extended
 
 Some clever people started using the 8th bit (the bit used for parity) to encode more characters to support their language (to support "é" for example). Just using one extra bit doubled the size of the original ASCII table to map up to 256 characters (2^8 = 256 characters). And not 2^7 as before (128).
 
@@ -65,7 +66,7 @@ There is no such thing as "extended ASCII" yet this is an easy way to refer to t
 
 ASCII Extended solves the problem for languages that are based on the Latin alphabet... what about the others needing a completely different alphabet? Greek? Russian? Polish? Chinese and the likes?
 
-We would have needed an entirely new character set... that's the rational behind Unicode. Unicode doesn't contain every character from every language, but it sure contains a gigantic amount of characters (see this table).
+We would have needed an entirely new character set... that's the rational behind Unicode. Unicode doesn't contain every character from every language, but it sure contains a gigantic amount of characters [(see this table)](https://en.wikipedia.org/wiki/List_of_Unicode_characters).
 
 You cannot save text to your hard drive as "Unicode". Unicode is an abstract representation of the text. You need to "encode" this abstract representation. That's where an Encoding comes into play.
 
@@ -91,18 +92,30 @@ Why 2^7?
 
 This is obvious for some, but just in case. We have 7 slots available filled with either 0 or 1 (Binary Code). Each can have 2 combinations. If we have 7 spots, we have 2 * 2 * 2 * 2 * 2 * 2 * 2 = 2^7 = 128 combinations. Think about this as a Combination Lock with 7 wheels, each wheel having 2 numbers only.     
 
-[An interesting article on javascript's character encoding nuance](https://mathiasbynens.be/notes/javascript-encoding)     
+I will be using javascript for my implementations. JavaScript is case-sensitive and uses the Unicode character set. [Extra credit: An interesting article on javascript's character encoding nuance](https://mathiasbynens.be/notes/javascript-encoding)     
 
 ### Section 1 Questions
 
 ### 1.1 - Is Unique
-Implement an algorithm to determine if a string has all unique characters. What if you cannot use additional data structures?
+Implement an algorithm to determine if a string has all unique characters. What if you cannot use additional data structures?     
+
+* Are the characters Unicode or ASCII? There are (or will be) 1,114,112 Unicode characters. ASCII contains 128 characters, and extended ASCII contains 256 characters. These considerations should significantly alter your answer.  
+* When using a data structure, consider using a hash table. Without using an additional data structure, consider checking the string for instances of each letter as you iterate over it.
+
+[My implementation.](http://codepen.io/RyanThomasMusser/pen/LWbryz?editors=0012)
 
 ### 1.2 - Check Permutation
-Given two strings, write a method to decide if one is a permutation of the other.
+Given two strings, write a method to decide if one is a permutation of the other.    
+
+* Consider using a hash table. Alternatively, consider splitting the strings and sorting each array.
+* Can strings of different lengths be permutations?
+
+[My implementation.](http://codepen.io/RyanThomasMusser/pen/bqBKvP?editors=0012#0)
 
 ### 1.3 - URLify
-Write a method to replace all spaces in a string with ‘%20’. You may assume that the string has sufficient space at the end to hold the additional characters, and that you are given the “true” length of the string. (Note: implementing in Java, please use a character array so that you can perform this operation in place.) 
+Write a method to replace all spaces in a string with ‘%20’. You may assume that the string has sufficient space at the end to hold the additional characters, and that you are given the “true” length of the string. (Note: implementing in Java, please use a character array so that you can perform this operation in place.)
+
+[My implementation.](http://codepen.io/RyanThomasMusser/pen/bqBKvP?editors=0012#0)
 
 ### 1.4 - Palindrome Permutation
 Given a string, write a function to thick if it is a permutation of a palindrome. A palindrome is a word of phrase that is the same forwards and backwards. A permutation is a rearrangement of letters. The palindrome does not need to be limited to just dictionary words.
