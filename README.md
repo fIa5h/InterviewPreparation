@@ -109,13 +109,16 @@ Given two strings, write a method to decide if one is a permutation of the other
 
 * Consider using a hash table. Alternatively, consider splitting the strings and sorting each array.
 * Can strings of different lengths be permutations?
+* Should we regard case of the character?
 
-[My implementation.](http://codepen.io/RyanThomasMusser/pen/bqBKvP?editors=0012#0)
+[My implementation.](http://codepen.io/RyanThomasMusser/pen/bqBKvP?editors=0012)
 
 ### 1.3 - URLify
 Write a method to replace all spaces in a string with ‘%20’. You may assume that the string has sufficient space at the end to hold the additional characters, and that you are given the “true” length of the string. (Note: implementing in Java, please use a character array so that you can perform this operation in place.)
 
-[My implementation.](http://codepen.io/RyanThomasMusser/pen/bqBKvP?editors=0012#0)
+* Consider iterating over the letters backwards.
+
+[My implementation.](http://codepen.io/RyanThomasMusser/pen/evBjpE?editors=0012)
 
 ### 1.4 - Palindrome Permutation
 Given a string, write a function to thick if it is a permutation of a palindrome. A palindrome is a word of phrase that is the same forwards and backwards. A permutation is a rearrangement of letters. The palindrome does not need to be limited to just dictionary words.
