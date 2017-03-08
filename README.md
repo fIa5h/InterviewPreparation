@@ -121,13 +121,26 @@ Write a method to replace all spaces in a string with ‘%20’. You may assume 
 [My implementation.](http://codepen.io/RyanThomasMusser/pen/evBjpE?editors=0012)
 
 ### 1.4 - Palindrome Permutation
-Given a string, write a function to thick if it is a permutation of a palindrome. A palindrome is a word of phrase that is the same forwards and backwards. A permutation is a rearrangement of letters. The palindrome does not need to be limited to just dictionary words.
+Given a string, write a function to check if it is a permutation of a palindrome. A palindrome is a word or phrase that is the same forwards and backwards. A permutation is a rearrangement of letters. The palindrome does not need to be limited to just dictionary words.
+
+* Consider using a hash table.
+* Consider acceptable counts of character pairs.
+
+[My implementation.](http://codepen.io/RyanThomasMusser/pen/vxyaqN?editors=0012)
 
 ### 1.5 - One Away
 There are three types of edits that can be performed on strings: insert a character, remove a character or replace a character. Given to strings, write a function to check if they are one edit or zero edits away.
 
+* What can you determine from the lengths of the strings?
+
+[My implementation.](http://codepen.io/RyanThomasMusser/pen/zZoJwV?editors=0012)
+
 ### 1.6 - String Compression
-Implement a method to perform basic string compression using the counts of repeated characters. For example, the string aabbccccaaa would become a2b1c5a3. If the compressed string would not become smaller than the original string, your method should return the original string. You can assume the string has only uppercase and lowercase letters (a-z)
+Implement a method to perform basic string compression using the counts of repeated characters. For example, the string aabbcccccaaa would become a2b1c5a3. If the compressed string would not become smaller than the original string, your method should return the original string. You can assume the string has only uppercase and lowercase letters (a-z)
+
+* Consider memory consumption of string concatenation. In javascript, [the + operator is cheaper than using arrays](https://jsperf.com/string-concatenation101). Some languages have StringBuilder methods, or for a language like PHP, you use the . operator to specifically concatenate strings.
+
+[My implementation.](http://codepen.io/RyanThomasMusser/pen/dvOqEW?editors=0012)
 
 ### 1.7 - Rotate Matrix
 Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees. Can you do this in place?
