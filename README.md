@@ -251,7 +251,7 @@ A 7×7 matrix has 4 layers
 . . . . . . .
 ~~~~
 You may notice that incrementing the width and height of a matrix by one, does not always increase the number of layers. Taking the above matrices and tabulating the layers and dimensions, we see the number of layers increases once for every two increments of width and height:
-
+~~~~~
 +-----+--------+
 | N×N | Layers |
 +-----+--------+
@@ -263,8 +263,9 @@ You may notice that incrementing the width and height of a matrix by one, does n
 | 6×6 |      3 |
 | 7×7 |      4 |
 +-----+--------+
+~~~~~
 However, not all layers need rotating. A 1×1 matrix is the same before and after rotation. The central 1×1 layer is always the same before and after rotation no matter how large the overall matrix:
-
+~~~~~
 +-----+--------+------------------+
 | N×N | Layers | Rotatable Layers |
 +-----+--------+------------------+
@@ -276,8 +277,9 @@ However, not all layers need rotating. A 1×1 matrix is the same before and afte
 | 6×6 |      3 |                3 |
 | 7×7 |      4 |                3 |
 +-----+--------+------------------+
+~~~~~
 Given N×N matrix, how can we programmatically determine the number of layers we need to rotate? If we divide the width or height by two and ignore the remainder we get the following results.
-
+~~~~~
 +-----+--------+------------------+---------+
 | N×N | Layers | Rotatable Layers |   N/2   |
 +-----+--------+------------------+---------+
@@ -289,6 +291,7 @@ Given N×N matrix, how can we programmatically determine the number of layers we
 | 6×6 |      3 |                3 | 6/2 = 3 |
 | 7×7 |      4 |                3 | 7/2 = 3 |
 +-----+--------+------------------+---------+
+~~~~~
 Notice how N/2 matches the number of layers that need to be rotated? Sometimes the number of rotatable layers is one less the total number of layers in the matrix. This occurs when the innermost layer is formed of only one element (i.e. a 1×1 matrix) and therefore need not be rotated. It simply gets ignored.
 
 We will undoubtedly need this information in our function to rotate a matrix, so let’s add it now:
@@ -307,7 +310,7 @@ Now we know what layers are and how to determine the number of layers that actua
 . . . . .
 ~~~~
 Let’s look at columns first. The position of the columns defining the outermost layer, assuming we count from 0, are 0 and 4:
-
+~~~~~
 +--------+-----------+
 | Column | 0 1 2 3 4 |
 +--------+-----------+
@@ -317,8 +320,9 @@ Let’s look at columns first. The position of the columns defining the outermos
 |        | . x x x . |
 |        | . . . . . |
 +--------+-----------+
+~~~~~
 0 and 4 are also the positions of the rows for the outermost layer.
-
+~~~~~
 +-----+-----------+
 | Row |           |
 +-----+-----------+
@@ -328,10 +332,11 @@ Let’s look at columns first. The position of the columns defining the outermos
 |   3 | . x x x . |
 |   4 | . . . . . |
 +-----+-----------+
+~~~~~
 This will always be the case since the width and height are the same. Therefore we can define the column and row positions of a layer with just two values (rather than four).
 
 Moving inwards to the second layer, the position of the columns are 1 and 3. And, yes, you guessed it, it’s the same for rows. It’s important to understand we had to both increment and decrement the row and column positions when moving inwards to the next layer.
-
+~~~~~
 +-----------+---------+---------+---------+
 |   Layer   |  Rows   | Columns | Rotate? |
 +-----------+---------+---------+---------+
@@ -339,6 +344,7 @@ Moving inwards to the second layer, the position of the columns are 1 and 3. And
 | Inner     | 1 and 3 | 1 and 3 | Yes     |
 | Innermost | 2       | 2       | No      |
 +-----------+---------+---------+---------+
+~~~~~
 So, to inspect each layer, we want a loop with both increasing and decreasing counters that represent moving inwards, starting from the outermost layer. We’ll call this our ‘layer loop’.
 ~~~~
 def rotate(matrix):
@@ -367,7 +373,7 @@ Layer 0: first: 0, last: 4
 Layer 1: first: 1, last: 3
 ~~~~
 We now have a loop providing the positions of the rows and columns of each layer. The variables first and last identify the index position of the first and last rows and columns. Referring back to our row and column tables:
-
+~~~~~
 +--------+-----------+
 | Column | 0 1 2 3 4 |
 +--------+-----------+
@@ -387,6 +393,7 @@ We now have a loop providing the positions of the rows and columns of each layer
 |   3 | . x x x . |
 |   4 | . . . . . |
 +-----+-----------+
+~~~~~
 So we can navigate through the layers of a matrix. Now we need a way of navigating within a layer so we can move elements around that layer. Note, elements never ‘jump’ from one layer to another, but they do move within their respective layers.
 
 Rotating each element in a layer rotates the entire layer. Rotating all layers in a matrix rotates the entire matrix. This sentence is very important, so please try your best to understand it before moving on.
@@ -398,7 +405,7 @@ Now, we need a way of actually moving elements, i.e. rotate each element, and su
 6 7 8
 ~~~~
 Our layer loop provides the indexes of the first and last columns, as well as first and last rows:
-
+~~~~~
 +-----+-------+
 | Col | 0 1 2 |
 +-----+-------+
@@ -414,6 +421,7 @@ Our layer loop provides the indexes of the first and last columns, as well as fi
 |   1 | 3 4 5 |
 |   2 | 6 7 8 |
 +-----+-------+
+~~~~~
 Because our matrices are always square, we need just two variables, first and last, since index positions are the same for rows and columns.
 ~~~~
 def rotate(matrix):
@@ -429,7 +437,7 @@ def rotate(matrix):
         # We want to move within a layer here.
 ~~~~
 The variables first and last can easily be used to reference the four corners of a matrix. This is because the corners themselves can be defined using various permutations of first and last (with no subtraction, addition or offset of those variables):
-
+~~~~~
 +-----------------+-----------------+-------------+
 | Corner        | Position          | 3x3 Values  |
 +-----------------+-----------------+-------------+
@@ -438,6 +446,7 @@ The variables first and last can easily be used to reference the four corners of
 | bottom right  | (last, last)      | (2,2)       |
 | bottom left   | (last, first)     | (2,0)       |
 +-----------------+-----------------+-------------+
+~~~~~
 For this reason, we start our rotation at the outer four corners — we’ll rotate those first. Let’s highlight them with *.
 ~~~~
 * 1 *
