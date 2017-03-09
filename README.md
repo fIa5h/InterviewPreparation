@@ -92,7 +92,7 @@ Why 2^7?
 
 This is obvious for some, but just in case. We have 7 slots available filled with either 0 or 1 (Binary Code). Each can have 2 combinations. If we have 7 spots, we have 2 * 2 * 2 * 2 * 2 * 2 * 2 = 2^7 = 128 combinations. Think about this as a Combination Lock with 7 wheels, each wheel having 2 numbers only.     
 
-I will be using javascript for my implementations. JavaScript is case-sensitive and uses the Unicode character set. [Extra credit: An interesting article on javascript's character encoding nuance](https://mathiasbynens.be/notes/javascript-encoding)     
+I will be using javascript for my implementations but will also show some examples in Python. JavaScript is case-sensitive and uses the Unicode character set. [Extra credit: An interesting article on javascript's character encoding nuance](https://mathiasbynens.be/notes/javascript-encoding)     
 
 ### Section 1 Questions
 
@@ -548,6 +548,12 @@ print_matrix(matrix)
 ~~~~
 The output is:
 ~~~~
+[0, 1, 2, 3, 4]
+[5, 6, 7, 8, 9]
+[10, 11, 12, 13, 14]
+[15, 16, 17, 18, 19]
+[20, 21, 22, 23, 24]
+--------------------
 [20,  1,  2,  3,  0]
 [ 5, 16,  7,  6,  9]
 [10, 11, 12, 13, 14]
