@@ -642,11 +642,23 @@ Our rotate function results in:
 7,  4,  1  
 8,  5,  2 
 ~~~~
+
+[My implementation](https://codepen.io/RyanThomasMusser/pen/JWbeqq?editors=0012)
+
 ### 1.8 - Zero Matrix
 Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column are set to 0.
 
+* What common mistake may lead to an 'infinite loop' type situation where all rows and columns are set to 0?
+* Consider dynamic programming techniques.
+
+[My implementation](https://codepen.io/RyanThomasMusser/pen/evvpBv?editors=0012)
+
 ### 1.9 - String Rotation
 Assume you have a method isSubstring which checks if one word is a substring of another. Given two strings, s1 and s2, write code to check if s2 is a rotation of s1 using only one call to isSubstring. (e.g. “waterbottle” is a rotation of “erbottlewat”)
+
+* Consider the fractal nature of a string in relation to this problem. i.e. the string “waterbottle” may not be present in “erbottlewat”, but if we concatenate another instance of itself to the original, we then have “erbottle**waterbottle**wat”
+
+[My implementation](https://codepen.io/RyanThomasMusser/pen/yMMYro?editors=0012)
 
 *****************************************************************************************************************************************************************************************************************************************************************************************************************************************
 
