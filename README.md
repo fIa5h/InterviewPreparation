@@ -4,7 +4,7 @@
 
 *****************************************************************************************************************************************************************************************************************************************************************************************************************************************
 
-## 1) STRINGS (AND ESSENTIALLY, ARRAYS)
+## 1) STRINGS AND ARRAYS
 
 When dealing with comparisons or operations on strings, it's important to understand what type of information the string will contain. There are a multitude of character sets a software engineer should know about.     
 
