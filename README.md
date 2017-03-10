@@ -745,6 +745,8 @@ An animal shelter, which holds only dogs and cats, operates on a strictly "first
 ### 4.1 - Route between nodes
 Given a directed graph, design an algorithm to find out whether there is a route between two nodes.
 
+* What are the advatages and disadvantages to using breadth first or depth first search?
+
 ### 4.2 - Minimal Tree
 Given a sorted (increasing order) array with unique integer elements, write an algorithm to create a binary search tree with minimal height.
 
